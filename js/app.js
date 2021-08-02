@@ -113,6 +113,11 @@ function stopRecording() {
 
 	//create the wav blob and pass it on to createDownloadLink
 	rec.exportWAV(createDownloadLink);
+	
+	var pizzicatoSound = new Pizzicato.Sound(function() {
+		rec.getBuffer();
+	});
+    pizzicatoSound.play();
 }
 
 function createDownloadLink(blob) {
@@ -160,7 +165,7 @@ function createDownloadLink(blob) {
 		  xhr.send(fd);
 	})
 	li.appendChild(document.createTextNode (" "))//add a space in between
-	li.appendChild(upload)//add the upload link to li
+	//li.appendChild(upload)//add the upload link to li
 
 	//add the li element to the ol
 	recordingsList.appendChild(li);
