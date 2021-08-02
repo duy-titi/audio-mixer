@@ -3,11 +3,16 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/pizzicato/0.6.4/Pizzicato.js"></script>
 	</head>
 	<body>
-	<script type="text/javascript">		
-		var voice = new Pizzicato.Sound({
-			source: 'input',
-			options: { volume: 0.8 }
-		});
+	<script type="text/javascript">	
+		var voice;
+		function recordSound() {
+			voice = new Pizzicato.Sound({
+				source: 'input',
+				options: { volume: 0.8 }
+			});
+		}
+		
 	</script>
+	<button type="button" onclick="recordSound()">Record</button>
 	</body>
 </html>
